@@ -3,9 +3,11 @@
 // TODO:
 // - Support Windows OS for Android
 // - Create test script
+// - Options from json, js
 
 const yargs = require('yargs')
 const { log, ios, android } = require('../lib/extract-pkg')
+const { version } = require('../package.json')
 
 const isWin = process.platform === 'win32'
 
@@ -21,8 +23,9 @@ const argv = yargs
   .usage('Usage: $0 <ios|android> [options]')
   .command('ios', 'extract .app from iOS simulator')
   .command('android', 'extract .apk from Android emulator')
+  .demandCommand(1, 'choose a platform, <ios|android>')
   .help('help').alias('help', 'h')
-  .version('version', 'v1.0.0').alias('version', 'V')
+  .version('version', `v${version}`).alias('version', 'V')
   .options({
     id: {
       alias: 'i',

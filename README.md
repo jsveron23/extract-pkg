@@ -5,7 +5,7 @@ Extract app package from iOS simulator or Android emulator. Before running this 
 - Simulator or emulator should be running
 - The package file(.app or .apk) should be already installed
 
-## Installation & Start
+## Installation
 
 ```bash
 $ npm install extract-pkg -g # or --save-dev
