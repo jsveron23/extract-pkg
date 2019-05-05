@@ -2,7 +2,7 @@
 
 // TODO:
 // - Support Windows OS for Android
-// - Get device name automatically
+// - Create test script
 
 const yargs = require('yargs')
 const { log, ios, android } = require('../lib/extract-pkg')
