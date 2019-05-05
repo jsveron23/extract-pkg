@@ -11,7 +11,13 @@ Extract app package from iOS simulator or Android emulator. Before running this 
 $ npm install extract-pkg -g # or --save-dev
 ```
 
-# Usage
+## Usage
+
+```bash
+$ extract-pkg # or --help, display usage
+```
+
+If did not use `--to` or `-d`, it will use same path where command executed.
 
 ```bash
 $ extract-pkg ios --id=com.some.pkg --to=path/to
@@ -21,6 +27,33 @@ If did not use `--rename` or `-n`, the package file name will same as original f
 
 ```bash
 $ extract-pkg android --id=com.some.pkg --to=path/to --rename=app-debug.apk
+```
+
+## JSON file support
+
+You can provide JSON file as options.
+
+```json
+{
+  "ios": {
+    "id": "com.awesome.ios",
+    "to": "/path/to"
+  },
+  "android": {
+    "id": "com.awesome.android",
+    "to": "/path/to"
+  }
+}
+```
+
+```bash
+$ extract-pkg android --config=/path/to/config.json
+```
+
+But if you use like this way, `id` value in JSON file will be ignored.
+
+```bash
+$ extract-pkg android --config=/path/to/config.json --id=com.use.this
 ```
 
 ## License
