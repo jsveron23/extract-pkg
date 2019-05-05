@@ -2,7 +2,6 @@
 .git*
 .eslint*
 .prettier*
-*.MD
 *.apk
 *.app
 *.ipa
