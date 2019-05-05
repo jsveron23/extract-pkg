@@ -6,15 +6,16 @@
 
 const fs = require('fs')
 const yargs = require('yargs')
-const options = require('./options')
-const { log, ios, android, validate } = require('../lib/extract-pkg')
 const { version } = require('../package.json')
+const options = require('../lib/options')
+const check = require('../lib/check')
+const logger = require('../lib/logger')
 
 const isWin = process.platform === 'win32'
 
 // no Windows support
 if (isWin) {
-  log.warn('No support Windows platform yet.')
+  logger.warn('No support Windows platform yet.')
 
   process.exit(1)
 }
@@ -31,17 +32,16 @@ const argv = yargs
     return JSON.parse(fs.readFileSync(confPath, 'utf-8'))
   }).alias('config', 'c')
   .options(options)
+  .check(check)
   .argv
 
 const { _ } = argv
 const [platform] = _
 
-validate(platform, argv)
-
 if (platform === 'ios') {
-  ios(argv)
+  require('../lib/ios')(argv)
 }
 
 if (platform === 'android') {
-  android(argv)
+  require('../lib/android')(argv)
 }

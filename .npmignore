@@ -1,2 +1,8 @@
 .DS_Store
 .git*
+.eslint*
+.prettier*
+*.MD
+*.apk
+*.app
+*.ipa

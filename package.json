@@ -1,6 +1,6 @@
 {
   "name": "extract-pkg",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Extract .app, .apk from iOS simulator or Android emulator",
   "main": "index.js",
   "scripts": {
