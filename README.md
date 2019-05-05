@@ -1,6 +1,6 @@
-# extract-pkg &middot; [![npm](https://img.shields.io/npm/v/extract-pkg.svg)](https://www.npmjs.com/package/extract-pkg) [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md)
+# extract-pkg &middot; [![npm](https://img.shields.io/npm/v/extract-pkg.svg)](https://www.npmjs.com/package/extract-pkg) [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Extract app package from iOS simulator or Android emulator. Before running this command, you must check 2 things.
+Extract app package from iOS simulator or Android emulator. You must check 2 things before running the command.
 
 - Simulator or emulator should be running
 - The package file(.app or .apk) should be already installed
@@ -17,16 +17,16 @@ $ npm install extract-pkg -g # or --save-dev
 $ extract-pkg # or --help, display usage
 ```
 
-If did not use `--to` or `-d`, it will use same path where command executed.
+If did not add `--to` or `-d`, the command will use same path where command executed.
 
 ```bash
-$ extract-pkg ios --id=com.some.pkg --to=path/to
+$ extract-pkg ios --id=com.some.pkg
 ```
 
-If did not use `--rename` or `-n`, the package file name will same as original file name.
+If did not add `--rename` or `-n`, the command will be using same as original package file name.
 
 ```bash
-$ extract-pkg android --id=com.some.pkg --to=path/to --rename=app-debug.apk
+$ extract-pkg android --id=com.some.pkg --rename=app-debug.apk
 ```
 
 ## JSON file support
@@ -50,7 +50,7 @@ You can provide JSON file as options.
 $ extract-pkg android --config=/path/to/config.json
 ```
 
-But if you use like this way, `id` value in JSON file will be ignored.
+However, if you use `—id` with `—config`, even `id` value in JSON file exist, it will be ignored.
 
 ```bash
 $ extract-pkg android --config=/path/to/config.json --id=com.use.this
