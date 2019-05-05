@@ -2,7 +2,6 @@
 
 // TODO:
 // - Support Windows OS for Android
-// - Create test script
 
 const fs = require('fs')
 const yargs = require('yargs')
