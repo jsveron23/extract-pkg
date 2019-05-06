@@ -5,4 +5,4 @@
 *.apk
 *.app
 *.ipa
-tests/*
+test/*

@@ -3,7 +3,6 @@
 // TODO:
 // - Support Windows OS for Android
 
-const fs = require('fs')
 const yargs = require('yargs')
 const { check, options } = require('./yargs')
 const logger = require('./helpers/logger')
@@ -26,9 +25,7 @@ const argv = yargs
   .command('ios', 'extract .app from iOS simulator')
   .command('android', 'extract .apk from Android emulator')
   .demandCommand(1, 'choose a platform, <ios|android>')
-  .config('config', '.json config file support', (confPath) => {
-    return JSON.parse(fs.readFileSync(confPath, 'utf-8'))
-  }).alias('config', 'c')
+  .config('config', '.js or JSON support', (c) => require(c)).alias('config', 'c')
   .options(options)
   .check(check)
   .argv
