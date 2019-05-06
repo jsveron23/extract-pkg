@@ -1,4 +1,4 @@
-# extract-pkg &middot; [![npm](https://img.shields.io/npm/v/extract-pkg.svg)](https://www.npmjs.com/package/extract-pkg) [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+# extract-pkg &middot; [![npm](https://img.shields.io/npm/v/extract-pkg.svg)](https://www.npmjs.com/package/extract-pkg) [![Build Status](https://travis-ci.org/jsveron23/extract-pkg.svg?branch=master)](https://travis-ci.org/jsveron23/extract-pkg) [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 Extract app package from iOS simulator or Android emulator. You must check 2 things before running the command.
 

@@ -4,7 +4,8 @@
   "description": "Extract .app, .apk from iOS simulator or Android emulator",
   "main": "./bin/cli.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint src"
   },
   "bin": {
     "extract-pkg": "./bin/cli.js"
