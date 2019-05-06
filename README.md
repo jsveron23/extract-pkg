@@ -29,9 +29,7 @@ If did not add `--rename` or `-n`, the command will be using same as original pa
 $ extract-pkg android --id=com.some.pkg --rename=app-debug.apk
 ```
 
-## JSON file support
-
-You can provide JSON file as options.
+## Support .js or JSON
 
 ```json
 {
@@ -48,6 +46,25 @@ You can provide JSON file as options.
 
 ```bash
 $ extract-pkg android --config=/path/to/config.json
+```
+
+or,
+
+```js
+module.exports = {
+  ios: {
+    id: 'com.awesome.ios',
+    to: '/path/to'
+  },
+  android: {
+    id: 'com.awesome.android',
+    to: '/path/to'
+  }
+}
+```
+
+```bash
+$ extract-pkg ios --config=/path/to/config.js
 ```
 
 However, if you use `—id` with `—config`, even `id` value in JSON file exist, it will be ignored.
