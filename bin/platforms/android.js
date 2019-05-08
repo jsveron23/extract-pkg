@@ -5,7 +5,7 @@ const command = require('../utils/command')
 exports.extract = function extract (id) {
   const extract = command('Extract `.apk` from Android emulator')('adb')
 
-  extract(['shell', 'pm', 'path', id])
+  return extract(['shell', 'pm', 'path', id])
 }
 
 exports.getFrom = function getFrom ({ stdout }) {
