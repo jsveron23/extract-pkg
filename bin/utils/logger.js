@@ -1,3 +1,5 @@
+'use strict'
+
 const colors = require('colors') // eslint-disable-line
 
 function info (prefix = '', message) {

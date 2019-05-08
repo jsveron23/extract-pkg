@@ -1,4 +1,6 @@
-module.exports = function check (argv) {
+'use strict'
+
+function check (argv) {
   const { _, id, ios = {}, android = {} } = argv
   const [platform] = _
   const config = platform === 'ios' ? ios : android
@@ -9,3 +11,5 @@ module.exports = function check (argv) {
 
   return true
 }
+
+module.exports = check

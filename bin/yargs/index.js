@@ -1,3 +1,5 @@
+'use strict'
+
 const check = require('./check')
 const options = require('./options')
 

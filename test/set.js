@@ -1,5 +1,5 @@
 const expect = require('chai').expect
-const set = require('../src/helpers/set')
+const set = require('../bin/utils/set')
 
 describe('set priorities of argv', () => {
   const config = {
@@ -12,7 +12,7 @@ describe('set priorities of argv', () => {
     const id = 'com.arg.id'
     const to = '/arg/to'
     const rename = 'app-debug.app'
-    const args = set({ id, to, rename, config })
+    const args = set(['id', 'to', 'rename'], [{ id, to, rename }, config])
 
     expect(args).to.have.property('id', id)
     expect(args).to.have.property('to', to)
@@ -20,7 +20,10 @@ describe('set priorities of argv', () => {
   })
 
   it('use config props', () => {
-    const args = set({ id: null, to: null, rename: null, config })
+    const args = set(
+      ['id', 'to', 'rename'],
+      [{ id: null, to: null, rename: null }, config]
+    )
 
     expect(args).to.have.property('id', config.id)
     expect(args).to.have.property('to', config.to)
@@ -28,7 +31,16 @@ describe('set priorities of argv', () => {
   })
 
   it('`to` value assigned same as the command path', () => {
-    const args = set({ id: null, to: null, config: {} })
+    const args = set(
+      ['id', 'to', 'rename'],
+      [
+        { id: null, to: null },
+        {},
+        {
+          to: process.cwd()
+        }
+      ]
+    )
 
     // TODO: help me by submitting PR to test process.cwd() properly
     expect(args).to.have.property('to', process.cwd())

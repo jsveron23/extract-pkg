@@ -1,6 +1,6 @@
 {
   "name": "extract-pkg",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Extract .app, .apk from iOS simulator or Android emulator",
   "main": "./bin/cli.js",
   "scripts": {
@@ -21,6 +21,9 @@
     "extract",
     "app",
     "apk"
+  ],
+  "files": [
+    "bin/*"
   ],
   "repository": {
     "type": "git",
